@@ -11,7 +11,7 @@ body {
     align-items: center;
     height: 100vh;
     color: #333;
-    background-image: url('my-blog/static/main-me.jpg');
+    background-image: url('src/main-pic.jpg');
     background-color: #8999be;
     background-size: cover;
     background-position: center;
