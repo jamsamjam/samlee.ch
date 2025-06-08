@@ -60,7 +60,7 @@
 <body>
   <h1>When will my pasta be ready?</h1>
   <div class="buttons">
-    <button onclick="startTimer(8)">8 min</button>
+    <button onclick="startTimer(1)">8 min</button>
     <button onclick="startTimer(9)">9 min</button>
     <button onclick="startTimer(10)">10 min</button>
     <button onclick="startTimer(11)">11 min</button>
@@ -70,8 +70,10 @@
   <div class="timer" id="countdown">--:--</div>
 
   <div id="animation">
-    <img src="1.png" alt="Image 1">
+    <img src="3.png" alt="Ready?">
   </div>
+
+  <audio id="timerSound" src="wee.mp3"></audio>
 
   <script>
     let timerInterval;
@@ -86,7 +88,8 @@
         if (remaining <= 0) {
           clearInterval(timerInterval);
           document.getElementById('countdown').textContent = "Time's up!";
-          document.getElementById('animation').innerHTML = "✨✨";
+          document.getElementById('animation').innerHTML = `<img src="3.png" alt="Congrats!">`;
+          document.getElementById('timerSound').play();
           return;
         }
 
@@ -97,7 +100,7 @@
 
         // Switch images
         currentImage = currentImage === 1 ? 2 : 1;
-        document.getElementById('animation').innerHTML = `<img src="${currentImage}.png" alt="Image ${currentImage}">`;
+        document.getElementById('animation').innerHTML = `<img src="${currentImage}.png" alt="Making Pasta..">`;
       }, 1000);
     }
   </script>
