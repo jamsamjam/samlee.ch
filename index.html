@@ -13,27 +13,90 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sam Lee</h1>
-        <h2>CS Student @ EPFL</h2>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Sam Lee</h1>
+            <h2>CS Student @ EPFL</h2>
 
-        <div class="buttons">
-            <a href="https://github.com/jamsamjam" class="button">
-                <img src="src/logos/github.png" alt="Github">
-            </a>
-            <a href="https://www.linkedin.com/in/samleee/" class="button">
-                <img src="src/logos/linkedin.png" alt="linkedin">
-            </a>
-            <a href="mailto:andsunlit@gmail.com" class="button">
-                <span class="material-icons">email</span>
-            </a>
-            <a href="http://blog.samlee.ch" class="button">
-                <span class="material-icons">library_books</span>
-            </a>
-            <a href="coco.html" class="button">
-                <span class="material-icons">pets</span>
-            </a>
+            <div class="buttons">
+                <a href="https://github.com/jamsamjam" class="button">
+                    <img src="src/logos/github.png" alt="Github">
+                </a>
+                <a href="https://www.linkedin.com/in/samleee/" class="button">
+                    <img src="src/logos/linkedin.png" alt="linkedin">
+                </a>
+                <a href="mailto:andsunlit@gmail.com" class="button">
+                    <span class="material-icons">email</span>
+                </a>
+                <a href="http://blog.samlee.ch" class="button">
+                    <span class="material-icons">library_books</span>
+                </a>
+                <a href="coco.html" class="button">
+                    <span class="material-icons">pets</span>
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="projects-container">
+            <h2 class="projects-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Music Feature Explorer</h3>
+                        <p class="project-description">
+                            An interactive audio analysis tool using RMS, onset, and tempo features. It shows you structural elements of music visually.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Librosa</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jamsamjam/music-explorer" class="project-link">GitHub</a>
+                            <a href="#" class="project-link">Live Demo(soon)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">A Game of Life</h3>
+                        <p class="project-description">
+                            A simple implementation of Conway's Game of Life using RISC-V Assembly.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Assembly</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jamsamjam/a-game-of-life" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">ChaCuN: Carcassonne - Hunters and Gatherers</h3>
+                        <p class="project-description">
+                            A digital version of Carcassonne: Hunters and Gatherers.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jamsamjam/carcassonne" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
