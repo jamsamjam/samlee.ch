@@ -11,12 +11,12 @@ html {
 
 body {
     color: #333;
-    background-color: #8999be;
-    background-image: url('src/main-pic.jpg');
+    background-color: #010101;
+    background-image: url('src/main.jpg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -191,7 +191,12 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* Responsive Design */
+@media (min-width: 1200px) {
+    body {
+        background-position: center 30%;
+    }
+}
+
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
