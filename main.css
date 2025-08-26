@@ -129,6 +129,7 @@ h2 {
     height: 200px;
     object-fit: cover;
     margin-bottom: 0.1rem;
+    cursor: pointer;
 }
 
 .project-card .project-content .project-image ~ .project-image {
@@ -193,6 +194,28 @@ h2 {
     padding: 2rem 0 1.5rem 0;
     background: transparent;
     letter-spacing: 1px;
+}
+
+.hint-toast {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    background: rgba(0,0,0,0.45);
+    padding: 10px 14px;
+    border-radius: 8px;
+    z-index: 10001;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.hint-toast[aria-hidden="false"] {
+    opacity: 1;
 }
 
 /* Lightbox */

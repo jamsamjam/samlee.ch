@@ -40,6 +40,7 @@
     <section class="projects-section">
         <div class="projects-container">
             <h2 class="projects-title">My Projects</h2>
+            <!-- <div id="hintToast" class="hint-toast" aria-hidden="true">Click the images!</div> -->
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-content">
@@ -177,6 +178,7 @@
             var backBtn = document.getElementById('lightboxBackBtn');
             var prevBtn = document.getElementById('lightboxPrevBtn');
             var nextBtn = document.getElementById('lightboxNextBtn');
+            var hint = document.getElementById('hintToast');
             var galleryUrls = [];
             var currentIndex = -1;
 
@@ -209,6 +211,7 @@
                     galleryUrls = Array.prototype.map.call(nodes, function(n){ return n.src; });
                     currentIndex = Array.prototype.indexOf.call(nodes, target);
                     openLightboxByIndex(currentIndex > -1 ? currentIndex : 0);
+                    if (hint) { hint.setAttribute('aria-hidden', 'true'); }
                 }
             });
 
@@ -245,6 +248,34 @@
                     }
                 }
             });
+
+            var shownHint = false;
+            function showHint() {
+                if (!hint || shownHint) return;
+                hint.setAttribute('aria-hidden', 'false');
+                shownHint = true;
+                setTimeout(function(){
+                    if (hint) { hint.setAttribute('aria-hidden', 'true'); }
+                }, 1000);
+            }
+
+            var projectsSection = document.querySelector('.projects-section');
+            if ('IntersectionObserver' in window && projectsSection) {
+                var observer = new IntersectionObserver(function(entries){
+                    entries.forEach(function(entry){
+                        if (entry.isIntersecting) {
+                            showHint();
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.25 });
+                observer.observe(projectsSection);
+            } else {
+                var firstImg = document.querySelector('.project-image');
+                if (firstImg) {
+                    firstImg.addEventListener('mouseenter', showHint, { once: true });
+                }
+            }
         })();
     </script>
 </body>
