@@ -218,7 +218,6 @@ h2 {
     opacity: 1;
 }
 
-/* Lightbox */
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -262,16 +261,15 @@ h2 {
     height: auto;
     padding: 0.25rem 0.5rem;
     border-radius: 0;
-    font-size: 86px;
+    font-size: 60px;
     line-height: 1;
     text-align: center;
     cursor: pointer;
     box-shadow: none;
     z-index: 10000;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
     opacity: 0.85;
     transition: opacity 0.2s ease, transform 0.15s ease;
-    font-family: 'Knewave', sans-serif;
 }
 
 .lightbox-prev { left: 24px; }
@@ -291,15 +289,14 @@ h2 {
     border: none;
     padding: 0.5rem 0.75rem;
     border-radius: 0;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 14px;
     cursor: pointer;
     box-shadow: none;
     z-index: 10000;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.35);
     opacity: 0.9;
     transition: opacity 0.2s ease, transform 0.15s ease;
-    font-family: 'Helvetica', sans-serif;
 }
 
 .lightbox-back-button:hover {
