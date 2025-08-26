@@ -239,7 +239,7 @@ h2 {
     height: auto;
     padding: 0.25rem 0.5rem;
     border-radius: 0;
-    font-size: 100px;
+    font-size: 86px;
     line-height: 1;
     text-align: center;
     cursor: pointer;
@@ -269,6 +269,7 @@ h2 {
     padding: 0.5rem 0.75rem;
     border-radius: 0;
     font-weight: 500;
+    font-size: 14px;
     cursor: pointer;
     box-shadow: none;
     z-index: 10000;
