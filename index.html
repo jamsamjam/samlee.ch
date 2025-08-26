@@ -44,7 +44,10 @@
                 <div class="project-card">
                     <div class="project-content">
                         <h3 class="project-title">Tava</h3>
-                        <img class="project-image" src="src/tava.png" alt="Tava website image"><p class="project-description">
+                        <img class="project-image" src="src/tava-1.png" alt="Tava website image">
+                        <img class="project-image" src="src/tava-2.png" alt="Tava website image">
+                        <img class="project-image" src="src/tava-3.png" alt="Tava website image">
+                        <p class="project-description">
                             A platform that helps entrepreneurs validate and refine business ideas with data-driven market intelligence            
                         </p>
                         <div class="project-tech">
@@ -64,6 +67,7 @@
                 <div class="project-card">
                     <div class="project-content">
                         <h3 class="project-title">TalkTalk Bot & Dashboard</h3>
+                        <img class="project-image" src="src/talk-1.png" alt="TalkTalk dashboard image">
                         <img class="project-image" src="src/talk-2.png" alt="TalkTalk dashboard image"><p class="project-description">
                             Developed a weekly student update system and a dashboard to streamline student management and communication
                         </p>
@@ -157,5 +161,91 @@
     <footer class="site-footer">
         © 2025 Sam Lee. All rights reserved.
     </footer>
+    
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightboxOverlay" aria-hidden="true" role="dialog">
+        <button class="lightbox-back-button" id="lightboxBackBtn" aria-label="Close image">Back</button>
+        <button class="lightbox-nav-button lightbox-prev" id="lightboxPrevBtn" aria-label="Previous image">‹</button>
+        <img class="lightbox-image" id="lightboxImage" alt="Expanded project image">
+        <button class="lightbox-nav-button lightbox-next" id="lightboxNextBtn" aria-label="Next image">›</button>
+    </div>
+
+    <script>
+        (function() {
+            var overlay = document.getElementById('lightboxOverlay');
+            var overlayImage = document.getElementById('lightboxImage');
+            var backBtn = document.getElementById('lightboxBackBtn');
+            var prevBtn = document.getElementById('lightboxPrevBtn');
+            var nextBtn = document.getElementById('lightboxNextBtn');
+            var galleryUrls = [];
+            var currentIndex = -1;
+
+            function showImageAt(index) {
+                if (!galleryUrls.length) return;
+                var safeIndex = (index + galleryUrls.length) % galleryUrls.length;
+                currentIndex = safeIndex;
+                overlayImage.src = galleryUrls[safeIndex];
+            }
+
+            function openLightboxByIndex(index) {
+                showImageAt(index);
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                overlay.setAttribute('aria-hidden', 'true');
+                overlayImage.src = '';
+                document.body.style.overflow = '';
+            }
+
+            document.addEventListener('click', function(e) {
+                var target = e.target;
+                if (target && target.classList && target.classList.contains('project-image')) {
+                    e.preventDefault();
+                    // Build gallery from images within the same project card (Method B)
+                    var card = target.closest('.project-card');
+                    var nodes = card ? card.querySelectorAll('.project-image') : document.querySelectorAll('.project-image');
+                    galleryUrls = Array.prototype.map.call(nodes, function(n){ return n.src; });
+                    currentIndex = Array.prototype.indexOf.call(nodes, target);
+                    openLightboxByIndex(currentIndex > -1 ? currentIndex : 0);
+                }
+            });
+
+            backBtn.addEventListener('click', function() { closeLightbox(); });
+
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (currentIndex !== -1) {
+                    showImageAt(currentIndex - 1);
+                }
+            });
+
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (currentIndex !== -1) {
+                    showImageAt(currentIndex + 1);
+                }
+            });
+
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (overlay.getAttribute('aria-hidden') === 'false') {
+                    if (e.key === 'ArrowLeft') {
+                        showImageAt(currentIndex - 1);
+                    } else if (e.key === 'ArrowRight') {
+                        showImageAt(currentIndex + 1);
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -115,7 +115,7 @@ h2 {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
 
 .project-card:hover {
@@ -129,6 +129,10 @@ h2 {
     height: 200px;
     object-fit: cover;
     margin-bottom: 0.1rem;
+}
+
+.project-card .project-content .project-image ~ .project-image {
+    display: none;
 }
 
 .project-content {
@@ -189,6 +193,100 @@ h2 {
     padding: 2rem 0 1.5rem 0;
     background: transparent;
     letter-spacing: 1px;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+    box-shadow: none;
+    backdrop-filter: blur(8px) brightness(0.9);
+    -webkit-backdrop-filter: blur(8px) brightness(0.9);
+}
+
+.lightbox-overlay[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-image {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.lightbox-nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0;
+    font-size: 100px;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: none;
+    z-index: 10000;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+    font-family: 'Knewave', sans-serif;
+}
+
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+.lightbox-nav-button:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-back-button {
+    position: fixed;
+    top: 16px;
+    left: 24px;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: none;
+    z-index: 10000;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    opacity: 0.9;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.lightbox-back-button:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.lightbox-back-button:focus-visible,
+.lightbox-nav-button:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.9);
+    outline-offset: 2px;
 }
 
 @media (min-width: 1200px) {
