@@ -5,8 +5,6 @@
 
 ---
 
-## Server Setup
-
 [samlee.ch](https://samlee.ch) <br>
 [blog.samlee.ch](https://blog.samlee.ch) <br>
 
