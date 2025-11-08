@@ -12,6 +12,7 @@
 [status.samlee.ch](https://status.samlee.ch) <br>
 
 paste.samlee.ch <br>
+[photos.samlee.ch](https://photos.samlee.ch) <br>
 [todo.samlee.ch](https://todo.samlee.ch)
 
 ##
