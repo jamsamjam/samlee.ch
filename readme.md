@@ -14,7 +14,9 @@
 paste.samlee.ch <br>
 [photos.samlee.ch](https://photos.samlee.ch) <br>
 [todo.samlee.ch](https://todo.samlee.ch) <br>
-[coding.samlee.ch](https://coding.samlee.ch)
+[coding.samlee.ch](https://coding.samlee.ch) <br>
+[pdf.samlee.ch](https://pdf.samlee.ch)
+
 
 ##
 
